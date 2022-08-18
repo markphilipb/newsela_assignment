@@ -1,9 +1,8 @@
 Question: What words or phrases appear more frequently in questions that students tend to do poorly on, and what appear more frequently in questions that students do well on?
 
 The solution I wrote will print out the top k most frequent words for both poor and well performed questions. 
-The solution will take two percents (poor_percent and good_percent) and a number k. Questions with percent_correct lower than or equal to poor_percent is considered poor and 
+The solution will take 3 arguments: two percents (poor_percent and good_percent) and a number k. Questions with percent_correct lower than or equal to poor_percent is considered poor and 
 questions with percent_correct greather than good_percent is considered well performed. The solution also has the ability to exclude any irrelevant words as well as include any special words/phrases.
-
 
 
 Below you will find two scenarios of different percent value cutoffs and my analysis on their results
