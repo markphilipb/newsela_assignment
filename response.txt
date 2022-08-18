@@ -1,0 +1,80 @@
+Question: What words or phrases appear more frequently in questions that students tend to do poorly on, and what appear more frequently in questions that students do well on?
+
+The solution I wrote will print out the top k most frequent words for both poor and well performed questions. 
+The solution will take two percents (poor_percent and good_percent) and a number k. Questions with percent_correct lower than or equal to poor_percent is considered poor and 
+questions with percent_correct greather than good_percent is considered well performed. The solution also has the ability to exclude any irrelevant words as well as include any special words/phrases.
+
+
+
+Below you will find two scenarios of different percent value cutoffs and my analysis on their results
+-------------------------------------------------------------------------------------------------
+1.
+-Defining "questions students did poorly/well on" as questions with percent correct values of less than or equal to 50% or greater than 50%, respectively
+
+Top words in well performed questions (percent_correct > .5):
+
+[(1015, 'read'), (573, 'according'), (361, 'used'), (358, 'main'), (342, 'important'), (339, 'people'), (336, 'describes'), (309, 'meaning'), (306, 'summary'), (304, 'reason'), (241, 'means'), (218, 'true'), 
+(215, 'first'), (211, 'synonym'), (208, 'supports'), (203, 'would'), (202, 'who'), (200, 'more'), (194, 'least'), (192, 'new'), (177, 'were'), (171, 'students'), (163, 'when'), (159, 'scientists'), (155, 'central'), 
+(154, 'some'), (137, 'good'), (135, 'connection'), (133, 'support'), (132, 'help'), (129, 'information'), (127, 'school'), (125, 'children'), (122, 'out'), (122, 'evidence'), (118, 'states'), (118, 'reader'), (113, 'same'), 
+(113, 'effect'), (106, 'these'), (104, 'water'), (104, 'other'), (103, 'statement'), (103, 'reasons'), (101, 'mean'), (101, 'like'), (101, 'could'), (100, 'program'), (100, 'government'), (97, 'found'), (96, 'title'), 
+(96, 'phrase'), (96, 'i'), (96, 'america'), (95, 'year'), (94, 'based'), (92, 'there'), (91, 'likely'), (91, 'ideas'), (90, 'study'), (90, 'detail'), (87, 'u.s.'), (87, 'pro'), (86, 'another'), (85, 'part'), 
+(83, 'made'), (82, 'different'), (81, 'led'), (80, 'antonym'), (79, 'reading'), (79, 'con'), (77, 'united states'), (77, 'kids'), (76, 'where'), (75, 'time'), (75, 'food'), (73, 'infer'), (73, 'because'), (72, 'problem'), 
+(70, 'women'), (69, 'mentioned'), (68, 'them'), (68, 'below'), (66, 'without'), (66, 'event'), (66, 'discusses'), (64, 'learn'), (63, 'years'), (63, 'summarizes'), (63, 'high'), (62, 'last'), (61, 'world'), (60, 'over'), 
+(60, 'number'), (59, 'life'), (58, 'uses'), (58, 'team'), (58, 'schools'), (58, 'regarding'), (58, 'just')]
+
+
+Top words in poor performed questions (percent_correct <= .5):
+
+[(462, 'read'), (230, 'describes'), (187, 'main'), (178, 'important'), (176, 'summary'), (168, 'evidence'), (167, 'according'), (161, 'supports'), (150, 'people'), (135, 'reason'), (135, 'least'), (129, 'used'), 
+(129, 'means'), (121, 'support'), (118, 'central'), (116, 'first'), (114, 'would'), (106, 'connection'), (105, 'more'), (102, 'pro'), (101, 'con'), (99, 'new'), (93, 'meaning'), (92, 'information'), (90, 'some'), 
+(85, 'help'), (84, 'these'), (81, 'could'), (79, 'true'), (78, 'who'), (78, 'were'), (76, 'phrase'), (75, 'scientists'), (71, 'students'), (71, 'states'), (71, 'reasons'), (70, 'claim'), (65, 'when'), (64, 'antonym'), 
+(63, 'paragraphs'), (63, 'government'), (63, 'good'), (63, 'detail'), (60, 'other'), (59, 'synonym'), (59, 'draws'), (56, 'point'), (56, 'like'), (56, 'effect'), (56, 'argument'), (53, 'children'), (52, 'water'), 
+(52, 'title'), (52, 'different'), (50, 'reader'), (49, 'school'), (49, 'made'), (49, 'america'), (48, 'out'), (48, 'ideas'), (48, 'both'), (46, 'u.s.'), (46, 'there'), (45, 'something'), (45, 'part'), (45, 'over'), 
+(45, 'likely'), (43, 'statement'), (42, 'last'), (41, 'change'), (41, 'based'), (41, 'another'), (39, 'time'), (39, 'money'), (39, 'might'), (38, 'where'), (38, 'study'), (38, 'program'), (38, 'problem'), (37, 'years'), 
+(37, 'same'), (37, 'below'), (36, 'structure'), (36, 'led'), (35, 'ways'), (35, 'back'), (34, 'united states'), (34, 'show'), (34, 'relationship'), (33, 'details'), (32, 'world'), (32, 'infer'), (32, 'doing'), (31, 'women'), 
+(31, 'team'), (31, 'say'), (31, 'makes'), (31, 'food'), (30, 'view'), (30, 'should')]
+
+
+Analysis:
+
+Results of the top 100 words in questions where 50% of students did poor on and 50% did well on yielded many similar words but with different frequencies. 
+Most words that were common in both poor-performed and well-performed questions had frequencies that were greater in the well-performed questions than the poor performed ones. However, there are some words in the poor-performed 
+questions with greater frequency than the well-performed ones. The words 'pro' and 'con' existed in both poor-performed and well-performed questions but both words were more frequent in the poor-performed questions. This suggests 
+that students have trouble with questions relating to pros and cons.
+There were also some words that only existed in the poor-performed questions. The word 'argument' only exists in the poor-performed questions suggesting that students also have trouble with questions relating to 
+a persons argument or arguing against/for a topic.
+
+
+
+-------------------------------------------------------------------------------------------------
+2.
+-Defining "questions students did poorly/well on" as questions with percent correct values of less than or equal to 20% or greater than 20%, respectively
+Top words in well performed questions (percent_correct > .2):
+
+[(1455, 'read'), (739, 'according'), (554, 'describes'), (543, 'main'), (518, 'important'), (488, 'used'), (486, 'people'), (478, 'summary'), (435, 'reason'), (392, 'meaning'), (364, 'means'), (358, 'supports'), 
+(327, 'first'), (326, 'least'), (311, 'would'), (299, 'more'), (296, 'true'), (288, 'new'), (282, 'evidence'), (277, 'who'), (269, 'synonym'), (265, 'central'), (253, 'support'), (248, 'were'), (241, 'students'), 
+(241, 'connection'), (239, 'some'), (227, 'when'), (226, 'scientists'), (219, 'information'), (213, 'help'), (197, 'good'), (189, 'these'), (188, 'pro'), (187, 'states'), (179, 'con'), (175, 'school'), (175, 'could'), 
+(174, 'children'), (173, 'reasons'), (170, 'out'), (166, 'phrase'), (166, 'effect'), (164, 'reader'), (161, 'other'), (160, 'government'), (157, 'like'), (153, 'water'), (150, 'same'), (149, 'detail'), (147, 'title'),
+(145, 'statement'), (142, 'antonym'), (142, 'america'), (139, 'ideas'), (138, 'program'), (137, 'there'), (135, 'based'), (133, 'likely'), (131, 'u.s.'), (131, 'made'), (128, 'part'), (127, 'different'), (126, 'another'),
+(124, 'study'), (124, 'i'), (123, 'year'), (120, 'found'), (116, 'led'), (113, 'mean'), (112, 'where'), (110, 'united states'), (110, 'time'), (110, 'draws'), (107, 'problem'), (107, 'paragraphs'), (105, 'food'), 
+(105, 'claim'), (105, 'below'), (104, 'infer'), (103, 'kids'), (102, 'over'), (101, 'last'), (100, 'years'), (100, 'because'), (99, 'women'), (99, 'point'), (98, 'reading'), (97, 'mentioned'), (96, 'them'), 
+(94, 'argument'), (93, 'money'), (92, 'world'), (91, 'summarizes'), (91, 'both'), (90, 'show'), (90, 'change'), (89, 'might'), (88, 'team'), (87, 'say')]
+
+
+Top words in poor performed questions (percent_correct <= .2):
+
+[(22, 'read'), (12, 'describes'), (11, 'supports'), (10, 'meaning'), (9, 'small'), (8, 'silver'), (8, 'scientists'), (8, 'evidence'), (8, 'central'), (7, 'were'), (7, 'trend'), (7, 'infographic'), (7, 'different'), 
+(7, 'could'), (6, 'would'), (6, 'phrase'), (6, 'more'), (6, 'means'), (5, 'some'), (5, 'moyer'), (5, 'chicken'), (5, 'both'), (5, 'animals'), (4, 'without'), (4, 'time'), (4, 'taking'), (4, 't. rex'), (4, 'summary'),
+(4, 'study'), (4, 'replace'), (4, 'reason'), (4, 'reader'), (4, 'question'), (4, 'products'), (4, 'possible'), (4, 'paragraphs'), (4, 'nanoparticles'), (4, 'introduction'), (4, 'help'), (4, 'fossils'), (4, 'first'),
+(4, 'detail'), (4, 'describe'), (4, 'children'), (4, 'changing'), (4, 'back'), (3, 'who'), (3, 'water'), (3, 'suggests'), (3, 'sound'), (3, 'something'), (3, 'shawkey'), (3, 'problem'), (3, 'point'), (3, 'people'),
+(3, 'over'), (3, 'other'), (3, 'new'), (3, 'necessary'), (3, 'military'), (3, 'major'), (3, 'living'), (3, 'likely'), (3, 'least'), (3, 'last'), (3, 'humans'), (3, 'helps'), (3, 'happened'), (3, 'government'), 
+(3, 'good'), (3, 'global'), (3, 'found'), (3, 'florida'), (3, 'findings'), (3, 'effect'), (3, 'describing'), (3, 'concerns'), (3, 'change'), (3, 'area'), (3, 'america'), (3, 'also'), (3, '1'), (2, 'worried'), 
+(2, 'women'), (2, 'where'), (2, 'well'), (2, 'view'), (2, 'uses'), (2, 'used'), (2, 'understand'), (2, 'uncertain'), (2, 'u.s.'), (2, 'tropical'), (2, 'toward'), (2, 'tells'), (2, 'talking'), (2, 'swamped'), 
+(2, 'suspended'), (2, 'suggested'), (2, 'suggest')]
+
+Analysis:
+
+Results for top 100 words on questions with percent_correct less than or equal to 20% revealed more words that appear only in the poor-performed questions. These results suggest that these words that only appear in 
+the poor-performed questions are topics that students have trouble in. Topics that include 'infographic', 'nanoparticles', 'fossils', 'shawkey', 'tropical', 'military', etc, are some topics that students really have 
+trouble with. These results also show that students are very comfortable with topics related to 'america' or 'u.s.' with the frequency for these words much higher in the well-performed questions than the poor-performed ones.
+
