@@ -2,7 +2,7 @@
 ## About
 The solution I wrote will print out the top k most frequent words for both poor and well performed questions. 
 The solution will take 3 arguments: two percents (`poor_percent` and `good_percent`) and a number `k`. Questions with `percent_correct` lower than or equal to `poor_percent` is considered poor and 
-questions with `percent_correct` greather than `good_percent` is considered well performed. The solution also has the ability to exclude any irrelevant words as well as include any special words/phrases.
+questions with `percent_correct` greater than `good_percent` is considered well performed. The solution also has the ability to exclude any irrelevant words as well as include any special words/phrases.
 
 ## Running the code
 *Note: These instructions were performed on a Mac and assuming the user has python installed. Performing the instructions on Windows should be similar*
