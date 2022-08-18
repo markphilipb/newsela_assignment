@@ -6,6 +6,7 @@ questions with `percent_correct` greather than `good_percent` is considered well
 
 ## Running the code
 *Note: These instructions were performed on a Mac and assuming the user has python installed. Performing the instructions on Windows should be similar*
+
 On a terminal, navigate to the **newsela_assignment** directory. You can execute the code by running main.py with 3 command 
 line arguments such as: `python main.py poor_percent good_percent k` 
 *(make sure to replace `poor_percent` and `good_percent` with a float less than 1 and k with an integer)*.
